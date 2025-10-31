@@ -3,8 +3,9 @@
 
 int main(int argc, char const *argv[])
 {
-    int opc1=0, opc2=0;
-
+    int opc1=0, opc2=0, cont=0;
+    char Nombre[10][50];
+    float Precio [10]={0};
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
     do
@@ -19,7 +20,15 @@ int main(int argc, char const *argv[])
     switch (opc1)
     {
     case 1:
-
+        printf("MAX: 10 productos\n");   
+        if (cont<10)
+        {
+            Precio[cont]=IngresoDatos(Nombre[cont], Precio[cont]);
+            cont++;
+        }
+        else{
+            printf("CANTIDAD MAXIMA DE PRODUCTOS\n")
+        }
         break;
     case 2:
 
@@ -42,7 +51,5 @@ int main(int argc, char const *argv[])
     scanf("%d",&opc2);
     } while (opc2==1);
     
-
-
     return 0;
 }
