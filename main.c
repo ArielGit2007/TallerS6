@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 {
     int opc1=0, opc2=0, cont=0;
     char Nombre[10][50];
-    float Precio [10]={0}, MasCaro, MasBarato;
+    float Precio [10]={0}, MasCaro, MasBarato, Total;
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
     do
@@ -24,7 +24,8 @@ int main(int argc, char const *argv[])
         cont=IngresoDatos(Nombre[cont], Precio,cont);
         break;
     case 2:
-        
+        Total=PrecioTotal(Precio, cont);
+        printf("El precio total del inventario es de:  %.2f\n", Total);
         
         break;
     case 3:

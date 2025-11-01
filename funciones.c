@@ -21,7 +21,14 @@ float IngresoDatos (char a[], float b[], int cont ){
     
 }
 
-
+float PrecioTotal(float Precio[], int cont){
+    float Total=0;
+    for ( int i = 0; i < cont; i++)
+    {
+        Total+=Precio[i];
+    }
+    return Total;
+}
 
 void BorrarSaltolinea (char a[]){
 int len = strlen(a) - 1;
