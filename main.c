@@ -28,10 +28,10 @@ int main(int argc, char const *argv[])
         printf("El precio total del inventario es de:  %.2f\n", Total);
         break;
     case 3:
-        MasCaro(Precio, Nombre,cont);
+        MasCaroBarato(Precio, Nombre,cont);
         break;  
     case 4:
-
+        PrecioPromedio(Precio, cont);
         break;
     case 5:
 

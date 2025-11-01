@@ -4,8 +4,8 @@
 void BorrarSaltolinea ( char a[]);
 float IngresoDatos (char a[], float b[] , int cont);
 float PrecioTotal(float Precio[], int cont);
-void MasCaro(float Precio[],char producto[][50], int cont);
-
+void MasCaroBarato(float Precio[],char producto[][50], int cont);
+void PrecioPromedio(float Precio[], int cont);
 
 float IngresoDatos (char a[], float b[], int cont ){
     do
@@ -33,7 +33,7 @@ float PrecioTotal(float Precio[], int cont){
     return Total;
 }
 
-void MasCaro(float Precio[],char producto[][50], int cont){
+void MasCaroBarato(float Precio[],char producto[][50], int cont){
     int indice1=0, indice2=0;
     float MasCaro=0, MasBarato=1000;
     for (int i = 0; i < cont; i++)
@@ -53,6 +53,15 @@ void MasCaro(float Precio[],char producto[][50], int cont){
     printf("El producto mas caro del inventario es %s de precio: %.02f\n", producto[indice1], Precio[indice1]);
     printf("El producto mas barato del inventario es %s de precio: %0.2f\n", producto[indice2], Precio[indice2]);
 }
+
+void PrecioPromedio(float Precio[], int cont){
+    float Sumatoria=0, promedio=0;    
+    Sumatoria=PrecioTotal(Precio, cont);
+    promedio=Sumatoria/(cont);
+
+    printf("El precio promedio de todos los productos es de: %.02f\n",promedio);
+}
+
 
 void BorrarSaltolinea (char a[]){
 int len = strlen(a) - 1;
