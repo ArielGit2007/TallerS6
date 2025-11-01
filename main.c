@@ -3,9 +3,9 @@
 
 int main(int argc, char const *argv[])
 {
-    int opc1=0, opc2=0, cont=0;
+    int opc1=0, opc2=0, cont=0, indice=0;
     char Nombre[10][50];
-    float Precio [10]={0}, MasCaro, MasBarato, Total;
+    float Precio [10]={0}, Total;
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
     do
@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     printf("Elija una de las siguientes opciones\n");
     printf("1. Ingrese los datos de los productos\n");
     printf("2. Calcular el precio total del inventario\n");
-    printf("3. Encontrar el producto más caro y el más barato\n");
+    printf("3. Encontrar el producto mas caro y el mas barato\n");
     printf("4. Calcular el precio promedio de todos los productos\n");
     printf("5. Buscar un producto\n");
     scanf("%d", &opc1);
@@ -26,10 +26,9 @@ int main(int argc, char const *argv[])
     case 2:
         Total=PrecioTotal(Precio, cont);
         printf("El precio total del inventario es de:  %.2f\n", Total);
-        
         break;
     case 3:
-
+        MasCaro(Precio, Nombre,cont);
         break;  
     case 4:
 
