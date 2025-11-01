@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 {
     int opc1=0, opc2=0, cont=0;
     char Nombre[10][50];
-    float Precio [10]={0};
+    float Precio [10]={0}, MasCaro, MasBarato;
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
     do
@@ -21,17 +21,11 @@ int main(int argc, char const *argv[])
     {
     case 1:
         printf("MAX: 10 productos\n");   
-        if (cont<10)
-        {
-            Precio[cont]=IngresoDatos(Nombre[cont], Precio[cont]);
-            cont++;
-        }
-        else{
-            printf("CANTIDAD MAXIMA DE PRODUCTOS\n")
-        }
+        cont=IngresoDatos(Nombre[cont], Precio,cont);
         break;
     case 2:
-
+        
+        
         break;
     case 3:
 
