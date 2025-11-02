@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "funciones.h"
 
-int main(int argc, char const *argv[])
+void main(int argc, char const *argv[])
 {
-    int opc1=0, opc2=0, cont=0, indice=0;
-    char Nombre[10][50];
+    int opc1=0, opc2=0, cont=0;
+    char Nombre[10][50]={""}, c[1][100];
     float Precio [10]={0}, Total;
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     printf("3. Encontrar el producto mas caro y el mas barato\n");
     printf("4. Calcular el precio promedio de todos los productos\n");
     printf("5. Buscar un producto\n");
-    scanf("%d", &opc1);
+    if (scanf("%d", &opc1)==1){
     switch (opc1)
     {
     case 1:
@@ -39,10 +39,21 @@ int main(int argc, char const *argv[])
     default:
         break;
     }
+    }
+    else{
+        printf("No es una opcion valida\n");
+        fgets(c[0], sizeof(c), stdin); 
+    }
+
+   do {
+        printf("Quiere hacer otra operacion 1. Si 2. No: ");
+        if (scanf("%d", &opc2) != 1) {
+            printf("Entrada invalida. Intente de nuevo.\n");
+            fgets(c[0], sizeof(c), stdin); 
+            opc2 = 0; 
+        }
+    } while (opc2 != 1 && opc2 != 2);
     
-    printf("Quiere hacer otra operacion 1. Si 2. No: ");
-    scanf("%d",&opc2);
     } while (opc2==1);
     
-    return 0;
 }
