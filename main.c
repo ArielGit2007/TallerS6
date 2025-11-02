@@ -34,9 +34,8 @@ int main(int argc, char const *argv[])
         PrecioPromedio(Precio, cont);
         break;
     case 5:
-
+        Buscarnombre(Nombre,Precio, cont);
         break;
-    
     default:
         break;
     }
