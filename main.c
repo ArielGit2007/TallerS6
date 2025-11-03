@@ -5,7 +5,7 @@ void main(int argc, char const *argv[])
 {
     int opc1=0, opc2=0, cont=0;
     char Nombre[10][50]={""}, c[1][100];
-    float Precio [10]={0}, Total;
+    float Precio [10]={0}, Total=0;
 
     printf("<<GESTION DE PRODUCTOS DEL INVENTARIO>>\n");
     do
@@ -19,8 +19,7 @@ void main(int argc, char const *argv[])
     if (scanf("%d", &opc1)==1){
     switch (opc1)
     {
-    case 1:
-        printf("MAX: 10 productos\n");   
+    case 1:   
         cont=IngresoDatos(Nombre[cont], Precio,cont);
         break;
     case 2:
@@ -44,16 +43,8 @@ void main(int argc, char const *argv[])
         printf("No es una opcion valida\n");
         fgets(c[0], sizeof(c), stdin); 
     }
+  opc2=validarOpc();
 
-   do {
-        printf("Quiere hacer otra operacion 1. Si 2. No: ");
-        if (scanf("%d", &opc2) != 1) {
-            printf("Entrada invalida. Intente de nuevo.\n");
-            fgets(c[0], sizeof(c), stdin); 
-            opc2 = 0; 
-        }
-    } while (opc2 != 1 && opc2 != 2);
-    
     } while (opc2==1);
     
 }

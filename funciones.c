@@ -7,13 +7,14 @@ float PrecioTotal(float Precio[], int cont);
 void MasCaroBarato(float Precio[],char producto[][50], int cont);
 void PrecioPromedio(float Precio[], int cont);
 void Buscarnombre(char Producto[][50], float Precio[], int cont);
-void validarDatoScanf (int validar, int opc);
+int validarOpc();
 
 
 float IngresoDatos (char a[], float b[], int cont ){
     if (cont<10){
     char c[1][100];
     
+    printf("MAX: 10 productos\n");
     fgets(c[0], sizeof(c), stdin);
     do
     {
@@ -155,3 +156,16 @@ if (len > 0 && a[len-1] == '\n') {
 }
 }
 
+int validarOpc(){
+    int opc2=0;
+    char c[1][50];
+     do {
+        printf("Quiere hacer otra operacion 1. Si 2. No: ");
+        if (scanf("%d", &opc2) != 1) {
+            printf("Entrada invalida. Intente de nuevo.\n");
+            fgets(c[0], sizeof(c), stdin); 
+            opc2 = 0; 
+        }
+    } while (opc2 != 1 && opc2 != 2);
+    return opc2;
+}
