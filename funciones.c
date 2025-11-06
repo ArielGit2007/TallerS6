@@ -101,36 +101,21 @@ void PrecioPromedio(float Precio[], int cont){
 
 void Buscarnombre(char Producto[][50], float Precio[], int cont){
     char BuscarProducto[1][50]={0};
-    int Encontrado=-1,iguales=0;
+    int Encontrado=-1;
     char c[1][100];
 
     if (cont>0)
     {
     fgets(c[0], sizeof(c), stdin);
-    printf("Ingrese el nombre del producto que desea buscar (tenga cuidado con Mayusculas y espacios)\n");
+    printf("Ingrese el nombre del producto que desea buscar (tenga cuidado con los espacios)\n");
     fgets(BuscarProducto[0],50, stdin);
     BorrarSaltolinea (BuscarProducto[0]);
     
     for (int i = 0; i < cont; i++)
     {
-        for (int j = 0; j < 50; j++)
-        {
-           if (Producto[i][j]==BuscarProducto[0][j])
-                {
-                    iguales=1;
-                }
-                else{
-                    iguales=0;
-                break;
-            }
-            if (Producto[i][j] == '\0' && BuscarProducto[0][j] == '\0')
-            {
-                break;
-            }
-        }
-        if(iguales==1){
-        Encontrado=i;
-        break;
+        if(_stricmp(Producto[i], BuscarProducto[0])==0){
+            Encontrado=i;
+            break;
         }
     }
     if (Encontrado!=-1)
